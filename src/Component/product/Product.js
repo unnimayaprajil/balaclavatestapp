@@ -1,10 +1,9 @@
+import { faCartShopping, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import logo from '../../assets/logo.png'
 import shophead from '../../assets/shophead.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping, faCode, faComputer, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
 import './Product.css'
-import ProductItem from '../productitem/ProductItem'
 const Product = () => {
 
     return (

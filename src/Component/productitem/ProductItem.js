@@ -14,11 +14,8 @@ const ProductItem = () => {
     const [productPrice,setProductPrice]=useState()
     const [selected, setSelected] = useState()
     const [num, setNum] = useState(1);
-    console.log('productPrice', productPrice)
-    console.log('productSizeDefaultValue', productSizeDefaultValue)
     useEffect(() => {
         axios.get(`v1/getProductsDetails?product_id=67`).then((res) => {
-            console.log('res', res.data)
             setProductDetails(res.data.product_details)
             setProductSizeList(res.data.product_details.size)
             const defaultValue = res.data.product_details.size.filter((item) => item.selected == "1")
@@ -26,11 +23,6 @@ const ProductItem = () => {
             setProductImages(res.data.product_details.product_images)
             setProductColor(res.data.product_details.color)
             setProductPrice(res.data.product_details.product_price)
-          
-            const demo = res.data.product_details.color.map((item,index)=>item.prize_array)
-            console.log('demo', demo)
-            const demoo11 =demo.map((item)=>item.product_sku)
-            console.log('demoo11', demoo11)
         }
         )
 
@@ -38,18 +30,12 @@ const ProductItem = () => {
     }, [])
 
     function sizeHandleChange(e) {
-        console.log('e',e)
         setProductSizeDefaultValue(e.target.value);
     }
-
     const incNum = () => {
-        console.log('increment')
-        if (num < 10) {
             setNum(Number(num) + 1);
-        }
     };
     const decNum = () => {
-        console.log('dncrement')
         if (num > 1) {
             setNum(num - 1);
         }
